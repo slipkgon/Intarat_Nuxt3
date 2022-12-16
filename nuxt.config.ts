@@ -43,7 +43,12 @@ export default defineNuxtConfig({
   build: {
     transpile: ["@headlessui/vue"],
   },
-  modules: ["@vueuse/nuxt", "@nuxt/image-edge", "@nuxtjs/color-mode",'@pinia/nuxt'],
+  modules: [
+    "@vueuse/nuxt",
+    "@nuxt/image-edge",
+    "@nuxtjs/color-mode",
+    "@pinia/nuxt",
+  ],
   colorMode: {
     classSuffix: "",
   },
@@ -57,12 +62,14 @@ export default defineNuxtConfig({
     ssrHandlers: true,
   },
   vite: {},
+  /*
   nitro: {
     compressPublicAssets: true,
     prerender: {
       crawlLinks: true,
     },
   },
+  */
   image: {
     provider: "imgix",
     imgix: {
