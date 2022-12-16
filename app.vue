@@ -4,7 +4,6 @@
     <NuxtPage />
   </NuxtLayout>
 </template>
-<!--
 <script>
 if (process.client) {
   window.addEventListener('load', () => {
@@ -14,4 +13,4 @@ if (process.client) {
     navigator.serviceWorker.register('/sw.js')
   })
 }
-</script>-->
+</script>
