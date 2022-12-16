@@ -62,14 +62,12 @@ export default defineNuxtConfig({
     ssrHandlers: true,
   },
   vite: {},
-  /*
   nitro: {
     compressPublicAssets: true,
     prerender: {
       crawlLinks: true,
     },
   },
-  */
   image: {
     provider: "imgix",
     imgix: {
