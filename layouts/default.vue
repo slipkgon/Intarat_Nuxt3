@@ -42,9 +42,7 @@
                                 </svg>
                             </div>
                         </ColorScheme>
-                        <div v-if="$colorMode.unknown"
-                            class="relative select-none h-9 w-9 z-10  m-auto  rounded-full pointer-events-none bg-gray-200 dark:bg-gray-800 animate-pulse justify-center inline-block ">
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -52,10 +50,20 @@
         <div style="z-index: 100" class="max-w-8xl mx-auto px-4 ">
             <div :class="counter.menu == true ? '' : 'hidden lg:block'"
                 class="  border-r-0 lg:border-r dark:border-gray-700 border-gray-300 rounded w-full no-scrollbar pt-1 dark:bg-gray-900 bg-white dark:text-gray-200 fixed z-20 inset-0 top-[3.0rem] left-[max(0px,calc(50%-45rem))] right-auto lg:w-[20rem] pb-20 px-2 overflow-y-auto">
-                <nav id="nav" class=" select-none lg:text-sm lg:leading-6 relative mt-6 " style="z-index: 80">
+                <nav id="nav" class=" select-none lg:text-sm lg:leading-6 relative mt-8" style="z-index: 80">
                     <ul class="my-2">
-                        <li>
+                        <li :class="route.name == 'index' ? 'bg-blue-100 dark:bg-gray-700' : 'hover:bg-gray-200 bg-gray-100 dark:bg-gray-800 dark:text-white'"
+                            class="inline-flex lg:flex items-center rounded-md px-2 py-2 cursor-pointer m-2"
+                            @click="(router.push('/'), menuclose())">
 
+                            <span class="ml-2  text-base  break-all truncate">หน้าแรก</span>
+                        </li>
+
+                        <li :class="route.name == 'Home' ? 'bg-blue-100 dark:bg-gray-700' : 'hover:bg-gray-200 bg-gray-100 dark:bg-gray-800'"
+                            class="inline-flex lg:flex  items-center rounded-md px-2 py-2 cursor-pointer m-2"
+                            @click="(router.push('/Home'), menuclose())">
+
+                            <span class="ml-2  text-base  break-all truncate">ทดสอบ</span>
                         </li>
                     </ul>
                 </nav>
@@ -75,7 +83,8 @@ import { useCounterStore } from '@/stores/counter'
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 const scrollPosition = ref();
 const counter = useCounterStore();
-
+const router = useRouter();
+const route = useRoute()
 const updateScroll = () => {
     scrollPosition.value = window.scrollY;
 }
