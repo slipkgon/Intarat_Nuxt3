@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Thasadith-Regular";
+  src: url("~/assets/css/Thasadith-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+* {
+  font-family: "Thasadith-Regular";
+  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 0.4em;
+  height: 0.4em;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #b1b1b1;
+
+  border-radius: 20px;
+}
+
+.page-enter-active,
+.page-leave-active {
+  opacity: 0;
+}
+
+.page-enter-from,
+.page-leave-to {
+  transition: all 0.1s;
+}
+
+:root {
+  --color: #243746;
+  --color-primary: #158876;
+  --color-secondary: #0e2233;
+  --bg: #f3f5f4;
+  --bg-secondary: #fff;
+  --border-color: #ddd;
+}
+
+.dark {
+  --color: #ebf4f1;
+  --color-primary: #41b38a;
+  --color-secondary: #fdf9f3;
+  --bg: #182133;
+  --bg-secondary: #071521;
+  --border-color: #0d2538;
+}
+
+.sepia {
+  --color: #433422;
+  --color-secondary: #504231;
+  --bg: #f1e7d0;
+  --bg-secondary: #eae0c9;
+  --border-color: #ded0bf;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--color);
+  /*transition: background-color 0.3s;*/
+}
+
+a {
+  color: var(--color-primary);
+}
