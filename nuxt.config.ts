@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   ssr: true,
   runtimeConfig: {},
   app: {
+    //pageTransition: { name: "page", mode: "out-in" },
     head: {
       title: "Intarat Mekloy",
       htmlAttrs: {
@@ -15,7 +16,11 @@ export default defineNuxtConfig({
         { charset: "utf-8" },
         { name: "theme-color", content: "#FFFFFF" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { hid: "description", name: "description", content: "Intarat" },
+        {
+          hid: "description",
+          name: "description",
+          content: "ขอมูลโปรไฟล์ของ อินทรัตน์ เมฆลอย",
+        },
         { name: "format-detection", content: "telephone=no" },
       ],
       link: [
@@ -62,14 +67,14 @@ export default defineNuxtConfig({
     ssrHandlers: true,
   },
   vite: {},
-  /*
   nitro: {
     compressPublicAssets: true,
+    /*
     prerender: {
       crawlLinks: true,
     },
+    */
   },
-  */
   image: {
     provider: "imgix",
     imgix: {

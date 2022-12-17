@@ -28,12 +28,13 @@
 
 .page-enter-active,
 .page-leave-active {
-  opacity: 0;
+  transition: all 0.1s;
 }
 
 .page-enter-from,
 .page-leave-to {
-  transition: all 0.1s;
+  opacity: 0;
+ 
 }
 
 :root {
@@ -68,6 +69,3 @@ body {
   /*transition: background-color 0.3s;*/
 }
 
-a {
-  color: var(--color-primary);
-}
