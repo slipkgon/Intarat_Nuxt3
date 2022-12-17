@@ -99,7 +99,7 @@
                                 class="p-2 font-semibold text-xl dark:bg-gray-800 bg-gray-200  max-w-full w-max rounded-md mx-auto my-2 break-all truncate">
                                 อินทรัตน์ เมฆลอย
                             </div>
-                            <span class="text-gray-400 dark:text-gray-500">Web developer</span>
+                            <span>Web developer</span>
                         </div>
                         <ul class="my-2">
                             <li v-for="row in menudata" :key="row.name"
