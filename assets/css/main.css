@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@font-face {
+  font-family: 'Sarabun';
+  src: url("~/assets/css/Sarabun.ttf") format("truetype");
+  font-display: swap;
+}
 
 * {
   font-family: 'Sarabun', sans-serif;
