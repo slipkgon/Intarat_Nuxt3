@@ -3,7 +3,9 @@
     <NuxtPage />
   </NuxtLayout>
 </template>
-
+<style setup>
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap');
+</style>
 <script setup>
 if (process.client) {
   window.addEventListener('load', () => {
