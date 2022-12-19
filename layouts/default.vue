@@ -2,10 +2,10 @@
     <div class=" transition-all">
         <nav
             class="fixed p-2  w-full text-gray-600 dark:text-gray-200 flex items-center  z-50  bg-white  dark:bg-gray-900  dark:border-gray-700 border-gray-300 ">
-            <div class="container flex flex-wrap justify-between items-center mx-auto ">
+            <div class="w-full flex flex-wrap justify-between items-center mx-auto ">
                 <div class="flex ml-3 items-center">
                     <div @click="(counter.hidebar ? counter.hidebar = false : counter.hidebar = true)"
-                        class="hidden lg:block relative select-none h-10  z-10  m-auto    cursor-pointer  rounded-lg bg-gray-100/50 dark:bg-gray-800/50 ">
+                        class="hidden lg:block relative select-none h-10  z-10  m-auto   cursor-pointer  rounded-lg bg-gray-100/50 dark:bg-gray-800/50 ">
                         <svg width="40" height="40" viewBox="0 0 16 16" class="justify-center inline-block">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <path
@@ -15,13 +15,6 @@
                             </g>
                         </svg>
                     </div>
-                    <div class="mx-1 cursor-pointer flex items-center rounded  p-1  font-extrabold text-black"
-                        @click="router.push('/')">
-                        <nuxt-img format="webp" sizes="sm:100vw lg:50vw lg:400px" src="/icon_64x64.9565c6.png"
-                            alt="Logo"
-                            class="relative select-none w-12 h-12 z-10 m-auto rounded-full  pointer-events-none cursor-pointer bg-gray-100 dark:bg-gray-800 " />
-                    </div>
-
                     <div @click="(counter.menu ? counter.menu = false : counter.menu = true)"
                         class="lg:hidden block relative select-none h-10  z-10  m-auto    cursor-pointer  rounded-lg bg-gray-100/50 dark:bg-gray-800/50 ">
                         <svg width="40" height="40" viewBox="0 0 16 16" class="justify-center inline-block">
@@ -33,10 +26,18 @@
                             </g>
                         </svg>
                     </div>
+
+                    <div class="mx-1 cursor-pointer flex items-center rounded  p-1  font-extrabold text-black "
+                        @click="router.push('/')">
+                        <nuxt-img format="webp" sizes="sm:100vw lg:50vw lg:400px" src="/icon_64x64.9565c6.png"
+                            alt="Logo"
+                            class="relative select-none w-12 h-12 z-10 m-auto rounded-full  pointer-events-none cursor-pointer bg-gray-100 dark:bg-gray-800 " />
+                    </div>
+
+
                 </div>
                 <div class="flex items-center font-bold text-base">Intarat Mekloy</div>
                 <div class="flex items-end mr-3">
-
                     <div class="w-[80px] relative text-right">
                         <ColorScheme placeholder="" tag="div">
                             <div class="justify-center inline-block rounded-full  p-2  cursor-pointer  bg-gray-100 dark:bg-gray-800 absolute z-10 animate-fade-in"
@@ -58,7 +59,7 @@
                 </div>
 
                 <div :class="counter.menu ? 'hidden lg:block' : ''"
-                    class="scrollbar-hide lg:scrollbar-default bg-white  dark:bg-gray-900  dark:border-gray-700 border-gray-300  lg:border-none  justify-between items-center w-full lg:hidden block lg:w-auto lg:order-1 bottom-0 lg:top-0 fixed lg:static lg:h-0 left-0  overflow-x-auto no-scrollbar lg:scrollbar"
+                    class=" rounded-md scrollbar-hide lg:scrollbar-default bg-white  dark:bg-gray-900  dark:border-gray-700 border-gray-300  lg:border-none  justify-between items-center w-full lg:hidden block lg:w-auto lg:order-1 bottom-0 lg:top-0 fixed lg:static lg:h-0 left-0  overflow-x-auto no-scrollbar lg:scrollbar"
                     id="mobile-menu-2">
                     <div class="lg:relative mx-auto lg:float-right lg:px-6">
                         <ul class="flex  flex-row lg:space-x-8 lg:mt-0 lg:text-sm lg:font-medium text-center">
@@ -87,7 +88,7 @@
         <div style="z-index: 100" class="max-w-8xl mx-auto px-4">
             <div :class="!counter.hidebar ? '' : 'lg:hidden block'">
                 <div :class="counter.menu ? '' : 'hidden lg:block'"
-                    class="rounded w-full no-scrollbar  dark:bg-gray-900 bg-white dark:text-gray-200 fixed z-20 inset-0 top-[4.5rem]  right-auto lg:w-[20rem] pb-20 px-2 overflow-y-auto scrollbar-hide lg:scrollbar-default">
+                    class="rounded w-full  dark:bg-gray-900 bg-white dark:text-gray-200 fixed z-20 inset-0 top-[4.5rem]  right-auto lg:w-[20rem] pb-[2rem] px-2 overflow-y-auto scrollbar-hide lg:scrollbar-default">
                     <nav id="nav" class=" select-none lg:text-sm lg:leading-6 relative " style="z-index: 80">
 
                         <div class="p-2  rounded-lg block text-center" style="text-align: -webkit-center;">
@@ -162,6 +163,8 @@ const menudata = [
         icon2: ''
     },
 ]
+
+
 
 const menuclose = () => {
     counter.menu = false
