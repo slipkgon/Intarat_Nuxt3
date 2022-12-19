@@ -1,11 +1,11 @@
 <template>
     <div class=" transition-all">
-        <nav :class="scrollPosition > 0 ? 'shadow' : ''"
-            class="fixed p-2  w-full text-gray-600 dark:text-gray-200 flex items-center  z-50  bg-white  dark:bg-gray-900  dark:border-gray-700 border-gray-300 border-b">
+        <nav
+            class="fixed p-2  w-full text-gray-600 dark:text-gray-200 flex items-center  z-50  bg-white  dark:bg-gray-900  dark:border-gray-700 border-gray-300 ">
             <div class="container flex flex-wrap justify-between items-center mx-auto ">
                 <div class="flex ml-3 items-center">
                     <div @click="(counter.hidebar ? counter.hidebar = false : counter.hidebar = true)"
-                        class="hidden lg:block relative select-none h-10  z-10  m-auto    cursor-pointer  rounded-lg bg-gray-100/50 dark:bg-gray-800/50 animate-fade-in">
+                        class="hidden lg:block relative select-none h-10  z-10  m-auto    cursor-pointer  rounded-lg bg-gray-100/50 dark:bg-gray-800/50 ">
                         <svg width="40" height="40" viewBox="0 0 16 16" class="justify-center inline-block">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <path
@@ -23,7 +23,7 @@
                     </div>
 
                     <div @click="(counter.menu ? counter.menu = false : counter.menu = true)"
-                        class="lg:hidden block relative select-none h-10  z-10  m-auto    cursor-pointer  rounded-lg bg-gray-100/50 dark:bg-gray-800/50 animate-fade-in">
+                        class="lg:hidden block relative select-none h-10  z-10  m-auto    cursor-pointer  rounded-lg bg-gray-100/50 dark:bg-gray-800/50 ">
                         <svg width="40" height="40" viewBox="0 0 16 16" class="justify-center inline-block">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <path
@@ -37,27 +37,22 @@
                 <div class="flex items-center font-bold text-base">Intarat Mekloy</div>
                 <div class="flex items-end mr-3">
                     <div class="w-[80px] relative text-right">
-                        <ColorScheme placeholder="" tag="div">
-                            <div class="justify-center inline-block rounded-full  p-2  cursor-pointer  bg-gray-100 dark:bg-gray-800 absolute z-10 animate-fade-in"
-                                @click="$colorMode.value == 'light' ? $colorMode.preference = 'dark' : $colorMode.value == 'dark' ? $colorMode.preference = 'light' : null">
-                                <svg viewBox="0 0 16 16" class=" h-7 w-7">
-                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <path
-                                            :d="$colorMode.value == 'light' ? 'M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z'
-                                        : ($colorMode.value == 'dark' ? 'M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z'
-                                            : 'M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z')"
-                                            fill="currentColor"></path>
-                                    </g>
-                                </svg>
-                            </div>
-                        </ColorScheme>
-                        <div :class="$colorMode.unknown ? 'animate-pulse' : ''"
-                            class="bg-gray-100 dark:bg-gray-800 w-11 h-11 rounded-full  inline-block z-0"></div>
+                        <div @click="($colorMode.value == 'light' ? $colorMode.preference = 'dark' : $colorMode.value == 'dark' ? $colorMode.preference = 'light' : null), modeclick()"
+                            class="justify-center inline-block rounded-full  p-2  cursor-pointer  bg-gray-100 dark:bg-gray-800 absolute z-[5]">
+                            <svg viewBox="0 0 16 16" class=" h-7 w-7">
+                                <path
+                                    :d="modeTheme == 'light' ? 'M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z'
+                                : (modeTheme == 'dark' ? 'M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z'
+                                    : 'M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z')"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </div>
+                        <div class="bg-gray-100 dark:bg-gray-800 w-11 h-11 rounded-full  inline-block z-0"></div>
                     </div>
                 </div>
 
                 <div :class="counter.menu ? 'hidden lg:block' : ''"
-                    class="scrollbar-hide lg:scrollbar-default bg-white  dark:bg-gray-900  dark:border-gray-700 border-gray-300 border-t lg:border-none  justify-between items-center w-full lg:hidden block lg:w-auto lg:order-1 bottom-0 lg:top-0 fixed lg:static lg:h-0 left-0  overflow-x-auto no-scrollbar lg:scrollbar"
+                    class="scrollbar-hide lg:scrollbar-default bg-white  dark:bg-gray-900  dark:border-gray-700 border-gray-300  lg:border-none  justify-between items-center w-full lg:hidden block lg:w-auto lg:order-1 bottom-0 lg:top-0 fixed lg:static lg:h-0 left-0  overflow-x-auto no-scrollbar lg:scrollbar"
                     id="mobile-menu-2">
                     <div class="lg:relative mx-auto lg:float-right lg:px-6">
                         <ul class="flex  flex-row lg:space-x-8 lg:mt-0 lg:text-sm lg:font-medium text-center">
@@ -86,8 +81,8 @@
         <div style="z-index: 100" class="max-w-8xl mx-auto px-4">
             <div :class="!counter.hidebar ? '' : 'lg:hidden block'">
                 <div :class="counter.menu ? '' : 'hidden lg:block'"
-                    class="rounded w-full no-scrollbar pt-1 dark:bg-gray-900 bg-white dark:text-gray-200 fixed z-20 inset-0 top-[3.0rem]  right-auto lg:w-[20rem] pb-20 px-2 overflow-y-auto scrollbar-hide lg:scrollbar-default">
-                    <nav id="nav" class=" select-none lg:text-sm lg:leading-6 relative mt-8" style="z-index: 80">
+                    class="rounded w-full no-scrollbar  dark:bg-gray-900 bg-white dark:text-gray-200 fixed z-20 inset-0 top-[4.5rem]  right-auto lg:w-[20rem] pb-20 px-2 overflow-y-auto scrollbar-hide lg:scrollbar-default">
+                    <nav id="nav" class=" select-none lg:text-sm lg:leading-6 relative " style="z-index: 80">
 
                         <div class="p-2  rounded-lg block text-center" style="text-align: -webkit-center;">
                             <div class=" relative m-auto my-2">
@@ -140,11 +135,23 @@
 </template>
 <script setup lang="ts">
 import { useCounterStore } from '@/stores/counter'
-import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
-const scrollPosition = ref();
 const counter = useCounterStore();
+const { $colorMode } = useNuxtApp();
 const router = useRouter();
 const route = useRoute()
+const modeTheme = useCookie('modeTheme', {
+    maxAge: 604800,
+});
+
+const modeclick = () => {
+    if ($colorMode.value == 'light') {
+        modeTheme.value = 'dark'
+    } else {
+        if ($colorMode.value == 'dark') {
+            modeTheme.value = 'light'
+        }
+    }
+}
 const menudata = [
     { name: 'เกี่ยวกับตัวฉัน', to: '/', icon1: 'M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z', icon2: 'm8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z' },
     { name: 'การศึกษา', to: '/Education', icon1: 'M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z', icon2: '' },
@@ -160,17 +167,10 @@ const menudata = [
         icon2: ''
     },
 ]
-const updateScroll = () => {
-    scrollPosition.value = window.scrollY;
-}
+
 const menuclose = () => {
     counter.menu = false
 }
-onMounted(() => {
-    scrollPosition.value = window.scrollY;
-    window.addEventListener("scroll", updateScroll);
-})
-onBeforeUnmount(() => {
-    window.removeEventListener("scroll", updateScroll);
-})
+
+
 </script>
