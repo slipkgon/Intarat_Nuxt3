@@ -16,6 +16,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        Thasadith: ["Thasadith-Regular"],
+      },
       keyframes: {
         "fade-in-down": {
           "0%": {

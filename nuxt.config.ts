@@ -4,7 +4,6 @@ require("dotenv").config();
 
 export default defineNuxtConfig({
   ssr: true,
-  runtimeConfig: {},
   app: {
     //pageTransition: { name: "page", mode: "out-in" },
     head: {
@@ -36,6 +35,10 @@ export default defineNuxtConfig({
           href: "/intarat.png",
         },
         { rel: "manifest", href: "/manifest.json" },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap",
+        }
       ],
     },
   },
@@ -45,6 +48,7 @@ export default defineNuxtConfig({
   },
   components: true,
   plugins: [],
+
   build: {
     transpile: ["@headlessui/vue"],
   },
@@ -90,4 +94,5 @@ export default defineNuxtConfig({
       "2xl": 1536,
     },
   },
+  
 });

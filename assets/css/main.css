@@ -2,14 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Thasadith-Regular";
-  src: url("~/assets/css/Thasadith-Regular.ttf") format("truetype");
-  font-display: swap;
+html{
+  font-family: 'Sarabun', sans-serif;
 }
 
 * {
-  font-family: "Thasadith-Regular";
+  font-family: "Sarabun";
   scrollbar-width: none;
   scrollbar-width: thin;
   scrollbar-color: #fff;
