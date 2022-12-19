@@ -5,8 +5,10 @@
             <div class="container flex flex-wrap justify-between items-center mx-auto ">
                 <div class="flex ml-3 items-center">
                     <div @click="(counter.hidebar ? counter.hidebar = false : counter.hidebar = true)"
-                        class="hidden lg:block relative select-none h-10  z-10  m-auto    cursor-pointer  rounded-lg bg-gray-100/50 dark:bg-gray-800/50 ">
-                        <svg width="40" height="40" viewBox="0 0 16 16" class="justify-center inline-block">
+                        class="hidden lg:block relative select-none h-10  z-10  m-auto    cursor-pointer   rounded-lg bg-gray-100/50 dark:bg-gray-800/50 "
+                        :class="load ? '' : 'animate-pulse'">
+                        <svg width="40" height="40" viewBox="0 0 16 16" class="justify-center inline-block"
+                            :class="load ? '' : 'invisible'">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <path
                                     :d="counter.hidebar ? 'M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z'
@@ -57,9 +59,9 @@
                     </div>
                 </div>
 
-                <div :class="counter.menu ? 'hidden lg:block' : ''"
+                <div :class="counter.menu ? 'invisible lg:block' : ''"
                     class="scrollbar-hide lg:scrollbar-default bg-white  dark:bg-gray-900  dark:border-gray-700 border-gray-300  lg:border-none  justify-between items-center w-full lg:hidden block lg:w-auto lg:order-1 bottom-0 lg:top-0 fixed lg:static lg:h-0 left-0  overflow-x-auto no-scrollbar lg:scrollbar"
-                    id="mobile-menu-2">
+                    id="scrollArea2">
                     <div class="lg:relative mx-auto lg:float-right lg:px-6">
                         <ul class="flex  flex-row lg:space-x-8 lg:mt-0 lg:text-sm lg:font-medium text-center">
                             <!--inline-flex-->
@@ -84,11 +86,11 @@
                 </div>
             </div>
         </nav>
-        <div style="z-index: 100" class="max-w-8xl mx-auto px-4">
+        <div style="z-index: 100" class="max-w-8xl mx-auto px-4" :class="load ? '' : 'invisible'">
             <div :class="!counter.hidebar ? '' : 'lg:hidden block'">
-                <div :class="counter.menu ? '' : 'hidden lg:block'"
+                <div :class="counter.menu ? '' : 'hidden lg:block'" id="scrollArea"
                     class="rounded w-full no-scrollbar  dark:bg-gray-900 bg-white dark:text-gray-200 fixed z-20 inset-0 top-[4.5rem]  right-auto lg:w-[20rem] pb-20 px-2 overflow-y-auto scrollbar-hide lg:scrollbar-default">
-                    <nav id="nav" class=" select-none lg:text-sm lg:leading-6 relative " style="z-index: 80">
+                    <nav class=" select-none lg:text-sm lg:leading-6 relative " style="z-index: 80">
 
                         <div class="p-2  rounded-lg block text-center" style="text-align: -webkit-center;">
                             <div class=" relative m-auto my-2">
@@ -139,13 +141,25 @@
         </div>
     </div>
 </template>
-<script setup lang="ts">
+<script setup >
 import { useCounterStore } from '@/stores/counter'
 const counter = useCounterStore();
 const { $colorMode } = useNuxtApp();
 const router = useRouter();
 const route = useRoute()
-
+const Menubar = useCookie('Menubar', {
+    maxAge: 3,
+});
+const Menubar2 = useCookie('Menubar2', {
+    maxAge: 3,
+});
+const menu = useCookie('menu', {
+    maxAge: 3,
+});
+const menuhide = useCookie('menuhide', {
+    maxAge: 3,
+});
+const load = ref(false)
 
 const menudata = [
     { name: 'เกี่ยวกับตัวฉัน', to: '/', icon1: 'M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z', icon2: 'm8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z' },
@@ -162,7 +176,41 @@ const menudata = [
         icon2: ''
     },
 ]
+onMounted(() => {
+    if (process.client) {
+        if (useCookie()) {
+            load.value = true;
 
+        }
+        if (Menubar.value) {
+            setTimeout(() => {
+                document.querySelector('#scrollArea').scrollTop = Menubar.value
+                Menubar.value = null
+            }, 1);
+        }
+        if (Menubar2.value) {
+            setTimeout(() => {
+                document.querySelector('#scrollArea2').scrollLeft = Menubar2.value
+                Menubar2.value = null
+            }, 1);
+        }
+        if (menu.value) {
+            counter.menu = menu.value;
+            menu.value = null
+        }
+        if (menuhide.value) {
+            counter.hidebar = menuhide.value;
+            menuhide.value = null
+        }
+        window.addEventListener("beforeunload", () => {
+            window.history.scrollRestoration = "auto";
+            menu.value = counter.menu
+            menuhide.value = counter.hidebar
+            Menubar.value = document.querySelector('#scrollArea').scrollTop;
+            Menubar2.value = document.querySelector('#scrollArea2').scrollLeft;
+        });
+    }
+})
 const menuclose = () => {
     counter.menu = false
 }
