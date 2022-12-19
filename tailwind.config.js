@@ -1,5 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  variants: {
+    extend: {
+      display: ['group-hover'],
+    }
+  },
   darkMode: 'class',
   content: [
     "./components/**/*.{js,vue,ts}",
@@ -83,4 +88,4 @@ module.exports = {
     require('tailwind-scrollbar-hide'),
     require("flowbite/plugin")
   ],
-};
+};// tailwind.config.js

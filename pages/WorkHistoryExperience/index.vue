@@ -1,7 +1,5 @@
 <template>
-    <div>
-        3
-    </div>
+    <WorkHistory />
 </template>
 
 <script setup>

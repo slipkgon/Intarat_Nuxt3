@@ -1,7 +1,5 @@
 <template>
-    <div>
-     4
-    </div>
+    <WorkExperience />
 </template>
 
 <script setup>

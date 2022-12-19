@@ -62,7 +62,7 @@
                     <div class="lg:relative mx-auto lg:float-right lg:px-6">
                         <ul class="flex  flex-row lg:space-x-8 lg:mt-0 lg:text-sm lg:font-medium text-center">
                             <!--inline-flex-->
-                            <li class="w-20 mr-3 flex-1 lg:flex-none min-w-[80px]" style="margin: auto"
+                            <li class="w-20 mr-3 flex-1 lg:flex-none min-w-[80px] p-1" style="margin: auto"
                                 v-for="row in menudata" :key="row.name">
                                 <NuxtLink :to="row.to"
                                     :class="route.path == row.to ? 'bg-gray-100 dark:bg-gray-800' : '   hover:bg-gray-100 dark:hover:bg-gray-800'"
@@ -74,7 +74,7 @@
                                         </g>
                                     </svg>
 
-                                    <span class="tab tab-home block text-xs">{{ row.name }}</span>
+                                    <span class="tab tab-home block text-xs break-all truncate ">{{ row.name }}</span>
                                 </NuxtLink>
                             </li>
                         </ul>
@@ -86,7 +86,7 @@
         <div style="z-index: 100" class="max-w-8xl mx-auto px-4">
             <div :class="!counter.hidebar ? '' : 'lg:hidden block'">
                 <div :class="counter.menu ? '' : 'hidden lg:block'"
-                    class="rounded w-full no-scrollbar pt-1 dark:bg-gray-900 bg-white dark:text-gray-200 fixed z-20 inset-0 top-[3.0rem] left-[max(0px,calc(50%-45rem))] right-auto lg:w-[20rem] pb-20 px-2 overflow-y-auto scrollbar-hide lg:scrollbar-default">
+                    class="rounded w-full no-scrollbar pt-1 dark:bg-gray-900 bg-white dark:text-gray-200 fixed z-20 inset-0 top-[3.0rem]  right-auto lg:w-[20rem] pb-20 px-2 overflow-y-auto scrollbar-hide lg:scrollbar-default">
                     <nav id="nav" class=" select-none lg:text-sm lg:leading-6 relative mt-8" style="z-index: 80">
 
                         <div class="p-2  rounded-lg block text-center" style="text-align: -webkit-center;">
@@ -113,11 +113,18 @@
                                         <path v-if="row.icon2" :d="row.icon2" fill="currentColor"></path>
                                     </g>
                                 </svg>
-
                                 <span class="ml-2  text-base  break-all truncate">{{ row.name }}</span>
                             </li>
                         </ul>
                         <ContentLink />
+                        <div class="relative  w-max text-center m-auto">
+                            <div class="text-center m-auto"> <span class="underline text-xs cursor-pointer">Download
+                                    Resume</span>
+                            </div>
+
+                        </div>
+
+
                     </nav>
                 </div>
             </div>
@@ -143,6 +150,15 @@ const menudata = [
     { name: 'การศึกษา', to: '/Education', icon1: 'M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z', icon2: '' },
     { name: 'ประวัติการทำงาน', to: '/WorkHistoryExperience', icon1: 'M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z', icon2: '' },
     { name: 'ประสบการณ์การทำงาน', to: '/WorkExperience', icon1: 'M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z', icon2: 'M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z' },
+    {
+        name: 'รางวัที่ได้รับ', to: '/Reward',
+        icon1: 'M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935zM3.504 1c.007.517.026 1.006.056 1.469.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.501.501 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667.03-.463.049-.952.056-1.469H3.504z',
+        icon2: ''
+    }, {
+        name: 'ความสามารถและทักษะ', to: '/Skill',
+        icon1: 'M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z',
+        icon2: ''
+    },
 ]
 const updateScroll = () => {
     scrollPosition.value = window.scrollY;

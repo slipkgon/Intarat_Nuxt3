@@ -1,8 +1,8 @@
 <template>
-    <div>
-        2
 
-    </div>
+    <Education />
+
+
 </template>
 
 <script setup>
