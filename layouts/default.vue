@@ -93,7 +93,7 @@
 
                         <div class="p-2  rounded-lg block text-center" style="text-align: -webkit-center;">
                             <div class=" relative m-auto my-2">
-                                <nuxt-img format="webp" sizes="sm:100vw lg:50vw lg:400px" src="/icon_152x152.9565c6.png"
+                                <nuxt-img format="webp" sizes="sm:100vw lg:50vw lg:400px" src="/IntaratM.png"
                                     alt="Intarat Poto"
                                     class="relative select-none h-48 w-[192px] z-10  m-auto  rounded-full pointer-events-none  bg-gray-100 dark:bg-gray-800" />
                             </div>
@@ -120,8 +120,10 @@
                         </ul>
                         <ContentLink />
                         <div class="relative  w-max text-center m-auto">
-                            <div class="text-center m-auto"> <span class="underline text-xs cursor-pointer">Download
-                                    Resume</span>
+                            <div class="text-center m-auto"> <a
+                                    href="https://www.canva.com/design/DAE5zExFqvc/iWWoSZDdn5FbmbkIEVBBqQ/view?utm_content=DAE5zExFqvc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                                    target="_blank" class="underline text-xs cursor-pointer">
+                                    Resume</a>
                             </div>
 
                         </div>
@@ -132,7 +134,7 @@
             </div>
             <div class="">
                 <div class="pt-20 transition-all" :class="counter.hidebar ? '' : 'lg:pl-[20rem]'">
-                    <div class="mb-16 lg:mb-2 lg:mt-0 mt-4 ">
+                    <div class="mb-24 lg:mb-10 lg:mt-0 mt-4 ">
                         <slot />
                     </div>
                 </div>
@@ -154,18 +156,16 @@ const menudata = [
     { name: 'ประวัติการทำงาน', to: '/WorkHistoryExperience', icon1: 'M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z', icon2: '' },
     { name: 'ประสบการณ์การทำงาน', to: '/WorkExperience', icon1: 'M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z', icon2: 'M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z' },
     {
-        name: 'รางวัที่ได้รับ', to: '/Reward',
-        icon1: 'M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935zM3.504 1c.007.517.026 1.006.056 1.469.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.501.501 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667.03-.463.049-.952.056-1.469H3.504z',
-        icon2: ''
-    }, {
         name: 'ความสามารถและทักษะ', to: '/Skill',
         icon1: 'M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z',
         icon2: ''
     },
+    {
+        name: 'ระบบที่เคยพัฒนา', to: '/System',
+        icon1: 'M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z',
+        icon2: ''
+    },
 ]
-
-
-
 const menuclose = () => {
     counter.menu = false
 }

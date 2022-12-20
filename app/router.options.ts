@@ -27,8 +27,6 @@ export default <RouterConfig>{
         behavior: "smooth",
       };
     }
-    return new Promise((resolve) => {
-      resolve(position);
-    });
+    return new Promise((resolve) => {});
   },
 };
