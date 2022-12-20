@@ -11,8 +11,8 @@
                 <div class="m-2 inline-flex max-h-96 p-2  rounded-lg border-gray-300 select-none items-center text-center"
                     style="align-items: center" :key="i" v-for="(row, i) in Skilldata">
                     <div class="p-1 break-all block text-xs text-center">
-                        <nuxt-img format="webp" class="p-2 rounded-lg m-auto h-14 bg-white " :src="row.IMG"
-                            :alt="row.Name" />
+                        <nuxt-img format="webp" sizes="sm:100vw lg:50vw lg:400px"
+                            class="p-2 rounded-lg m-auto h-14 bg-white " :src="row.IMG" :alt="row.Name" />
                         <div class="break-all block text-xs  text-center text-gray-700 dark:text-gray-300">
                             {{ row.Name }} {{ row.Load }}
                         </div>
@@ -29,8 +29,8 @@
                     style="align-items: center" :key="i" v-for="(row, i) in OtherSkilldata">
                     <div class="p-1 break-all block text-xs text-center">
 
-                        <nuxt-img format="webp" class="p-2 rounded-lg m-auto h-14 bg-white " :src="row.IMG"
-                            :alt="row.Name" />
+                        <nuxt-img format="webp" sizes="sm:100vw lg:50vw lg:400px"
+                            class="p-2 rounded-lg m-auto h-14 bg-white " :src="row.IMG" :alt="row.Name" />
                         <div class="break-all block text-xs  text-center text-gray-700 dark:text-gray-300">
                             {{ row.Name }} {{ row.Load }}
                         </div>
